@@ -3,4 +3,4 @@ numpy
 pandas
 mysql.connector
 plotly
-PIL
+Pillow
