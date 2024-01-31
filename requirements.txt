@@ -4,3 +4,4 @@ pandas
 mysql.connector
 plotly
 Pillow
+gunicorn
