@@ -205,8 +205,10 @@ def print_hello_world_callback(n_clicks, combo, inicio, fin):
             figura=""
             print(figura)
             return f"{conexion}",False, figura
-	except Exception as e:
-		print(f"no pudo {e}")"
+        except Exception as e:
+            print(f"no pudo {e}")
+
+            return f"no pudo {e}",False, ""
 
 
 
