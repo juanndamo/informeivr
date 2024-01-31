@@ -179,7 +179,6 @@ def display_page(pathname):
 def print_hello_world_callback(n_clicks, combo, inicio, fin):
     # Check if the button was clicked
     if (combo==None or inicio==None or fin==None) and 'analyze-button' == ctx.triggered_id:
-
         return "Nada" ,True, None   # Puedes mostrar el resultado en tu diseño si es necesario
     if 'analyze-button' == ctx.triggered_id:
         try:
@@ -204,7 +203,7 @@ def print_hello_world_callback(n_clicks, combo, inicio, fin):
                 sql2=""
         except:
             print("no pudo")
-
+            return f"no pudo",True, ""
         figura=intento.transformacion(sql,sql2,conexion, inicio, fin, combo)
         print(figura)
         return f"{conexion}",False, figura
