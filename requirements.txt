@@ -5,3 +5,4 @@ mysql.connector
 plotly
 Pillow
 gunicorn
+dash-bootstrap-components
