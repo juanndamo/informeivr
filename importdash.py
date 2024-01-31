@@ -203,11 +203,10 @@ def print_hello_world_callback(n_clicks, combo, inicio, fin):
                 sql2=""
             figura=intento.transformacion(sql,sql2,conexion, inicio, fin, combo)
             figura=""
-            print(figura)
+            print("pudo")
             return f"{conexion}",False, figura
         except Exception as e:
-            print(f"no pudo {e}")
-
+            print("no pudo")
             return f"no pudo {e}",False, ""
 
 
