@@ -182,7 +182,7 @@ def print_hello_world_callback(n_clicks, combo, inicio, fin):
         return "Nada" ,True, None   # Puedes mostrar el resultado en tu diseño si es necesario
     if 'analyze-button' == ctx.triggered_id:
         try:
-            print("entra")
+            print("entra asd")
             #CONEXION MYSQL 
             conexion= mysql.connector.connect(user='repocct',password='r3p0cc7', host='10.32.4.251', 
                 database='mydb', port='3306')
