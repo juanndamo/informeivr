@@ -15,17 +15,17 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
 
-# Contenido de la primera página
 Flujo_pg = dbc.Container([
     dbc.Row([
         dbc.Col(html.H1("Flujo de las transacciones del IVR", className="BienvenidaLabel"), width=20),
     ]),
-    
+
+    html.Div(id='output-container'),
     
     dbc.Row([
         dbc.Col(
-            dcc.Graph(id='snake-chart',style={'height': '500px'}),
-            style={'height': '500px'}  # Establece la altura aquí
+            dcc.Graph(id='snake-chart',style={'height': '750px'}),
+            style={'height': '750px'}  # Establece la altura aquí
         ),
     ])# Container to display result
 ], className="mt-4")
@@ -140,10 +140,10 @@ app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     navbar,
     dbc.Row([
-        dbc.Col(accordion, width=3,style={
+        dbc.Col(accordion, width=2,style={
   'display': 'flex',
   'justify-content': 'center'}),  # Barra lateral que ocupa 3 columnas
-        dbc.Col(html.Div(id='page-content'), width=9),  # Contenido que ocupa 9 columnas
+        dbc.Col(html.Div(id='page-content'), width=10),  # Contenido que ocupa 9 columnas
     ]),
 ])
 
@@ -167,6 +167,7 @@ def display_page(pathname):
 
 @app.callback(
     [
+     Output('output-container', 'children'),
      Output('confirm-danger', 'displayed'),
      Output('snake-chart', 'figure')],
     [Input('analyze-button', 'n_clicks'),
@@ -179,7 +180,7 @@ def print_hello_world_callback(n_clicks, combo, inicio, fin):
     # Check if the button was clicked
     if (combo==None or inicio==None or fin==None) and 'analyze-button' == ctx.triggered_id:
 
-        return  True, None   # Puedes mostrar el resultado en tu diseño si es necesario
+        return "Nada" ,True, None   # Puedes mostrar el resultado en tu diseño si es necesario
     if 'analyze-button' == ctx.triggered_id:
         try:
             print("entra")
@@ -206,9 +207,9 @@ def print_hello_world_callback(n_clicks, combo, inicio, fin):
 
         figura=intento.transformacion(sql,sql2,conexion, inicio, fin, combo)
         print(figura)
-        return  False, figura
+        return f"{conexion}",False, figura
     else:     
-        return  False, ""
+        return f"nada", False, ""
 
 if __name__ == '__main__':
     app.run_server(debug=False,dev_tools_ui=False,dev_tools_props_check=False)
