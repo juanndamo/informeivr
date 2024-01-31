@@ -4,4 +4,4 @@ pandas
 mysql.connector
 plotly.graph_objects
 tkinter
-PIL import Image
+PIL
