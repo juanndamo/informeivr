@@ -201,12 +201,16 @@ def print_hello_world_callback(n_clicks, combo, inicio, fin):
             else:
                 sql= f"SELECT * FROM mydb.trackings WHERE start BETWEEN '{inicio} 00:00:00' AND '{fin} 23:59:59' AND detail LIKE '%Menu_Principal_SyS%'"
                 sql2=""
+                figura=intento.transformacion(sql,sql2,conexion, inicio, fin, combo)
+                print(figura)
+                return f"{conexion}",False, figura
         except:
             print("no pudo")
+
             return f"no pudo",True, ""
-        figura=intento.transformacion(sql,sql2,conexion, inicio, fin, combo)
-        print(figura)
-        return f"{conexion}",False, figura
+
+
+
     else:     
         return f"nada", False, ""
 
