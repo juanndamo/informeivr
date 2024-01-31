@@ -6,8 +6,6 @@ import numpy as np
 import pandas as pd
 import mysql.connector
 import plotly.graph_objects as go
-from tkinter import messagebox, ttk
-from tkinter import *
 from PIL import Image
 import intento
 
