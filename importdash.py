@@ -186,8 +186,9 @@ def print_hello_world_callback(n_clicks, combo, inicio, fin):
             #CONEXION MYSQL 
             conexion= mysql.connector.connect(user='repocct',password='r3p0cc7', host='10.32.4.251', 
                 database='mydb', port='3306')
+            print(conexion)
 
-
+            
             cursor= conexion.cursor()
 
             #SENTENCIA SQL PARA IVR COOMEVA
