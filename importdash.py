@@ -166,7 +166,7 @@ def display_page(pathname):
 
 
 @app.callback(
-    [Output('output-container', 'children'),
+    [
      Output('confirm-danger', 'displayed'),
      Output('snake-chart', 'figure')],
     [Input('analyze-button', 'n_clicks'),
@@ -179,7 +179,7 @@ def print_hello_world_callback(n_clicks, combo, inicio, fin):
     # Check if the button was clicked
     if (combo==None or inicio==None or fin==None) and 'analyze-button' == ctx.triggered_id:
 
-        return None, True, None   # Puedes mostrar el resultado en tu diseño si es necesario
+        return  True, None   # Puedes mostrar el resultado en tu diseño si es necesario
     if 'analyze-button' == ctx.triggered_id:
         try:
             print("entra")
@@ -206,9 +206,9 @@ def print_hello_world_callback(n_clicks, combo, inicio, fin):
 
         figura=intento.transformacion(sql,sql2,conexion, inicio, fin, combo)
         print(figura)
-        return f"{conexion} // {sql}", False, figura
+        return  False, figura
     else:     
-        return None, False, ""
+        return  False, ""
 
 if __name__ == '__main__':
     app.run_server(debug=False,dev_tools_ui=False,dev_tools_props_check=False)
