@@ -13,7 +13,7 @@ external_stylesheets = ['style.css',dbc.themes.BOOTSTRAP]
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
- server = app.server
+server = app.server
 
 # Contenido de la primera página
 Flujo_pg = dbc.Container([
