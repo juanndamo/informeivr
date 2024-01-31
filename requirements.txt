@@ -3,6 +3,4 @@ numpy
 pandas
 mysql.connector
 plotly
-tkinter
 PIL
-tkinter
