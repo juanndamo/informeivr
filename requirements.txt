@@ -2,6 +2,6 @@ dash
 numpy
 pandas
 mysql.connector
-plotly.graph_objects
+plotly
 tkinter
 PIL
